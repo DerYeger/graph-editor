@@ -80,3 +80,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.v-data-table-header-mobile {
+  tr:first-child {
+    th {
+      height: 0 !important;
+    }
+  }
+}
+</style>
