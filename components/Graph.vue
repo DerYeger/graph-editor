@@ -216,7 +216,7 @@ export default Vue.extend({
         linkGroup
           .append('path')
           .classed('link', true)
-          .style('marker-end', 'url(#link-arrow')
+          .style('marker-end', 'url(#link-arrow)')
         linkGroup
           .append('path')
           .classed('clickbox', true)
@@ -270,7 +270,7 @@ export default Vue.extend({
       const coordinates: [number, number] = [node.x!, node.y!]
       this.draggableLinkEnd = coordinates
       this.draggableLinkSourceNode = node
-      this.draggableLink!.style('marker-end', 'url(#link-arrow')
+      this.draggableLink!.style('marker-end', 'url(#draggable-link-arrow)')
         .classed('hidden', false)
         .attr('d', linePath(coordinates, coordinates))
       this.restart()
@@ -377,6 +377,10 @@ export default Vue.extend({
 
 .arrow {
   fill: orange;
+
+  &.draggable {
+    fill: orangered;
+  }
 }
 
 .node {
