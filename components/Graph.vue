@@ -15,6 +15,9 @@
         <v-icon v-text="'mdi-plus'" />
       </v-btn>
     </div>
+    <div v-show="!graphHasNodes" class="info-text text-h5 text--secondary">
+      Graph is empty
+    </div>
   </div>
 </template>
 
@@ -44,6 +47,7 @@ import { Node } from '~/model/node'
 
 interface Data {
   graph: Graph
+  graphHasNodes: Boolean
   width: number
   height: number
   simulation: any
@@ -71,6 +75,7 @@ export default Vue.extend({
   data(): Data {
     return {
       graph: new Graph(),
+      graphHasNodes: false,
       width: 400,
       height: 400,
       simulation: undefined,
@@ -143,6 +148,7 @@ export default Vue.extend({
     },
     createNode(x?: number, y?: number): void {
       this.graph.createNode(x ?? this.width / 2, y ?? this.height / 2)
+      this.graphHasNodes = true
       this.restart()
     },
     onTick(): void {
@@ -230,6 +236,7 @@ export default Vue.extend({
             .on('contextmenu', (event: MouseEvent, d: Node) => {
               terminate(event)
               this.graph.removeNode(d)
+              this.graphHasNodes = this.graph.nodes.length > 0
               this.resetDraggableLink()
               this.restart()
             })
@@ -325,6 +332,7 @@ export default Vue.extend({
     },
     deleteGraph(): void {
       this.graph = new Graph()
+      this.graphHasNodes = false
       this.resetGraph()
     },
   },
@@ -390,5 +398,17 @@ export default Vue.extend({
   -moz-user-select: none !important;
   -ms-user-select: none !important;
   user-select: none !important;
+}
+
+.info-text {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 </style>

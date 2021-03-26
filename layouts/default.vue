@@ -34,6 +34,6 @@ export default {
 
 <style>
 html {
-  overflow-y: auto !important;
+  overflow-y: hidden !important;
 }
 </style>
