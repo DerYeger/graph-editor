@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog">
     <template #activator="{ on, attrs }">
-      <v-btn icon elevation="6" v-bind="attrs" v-on="on">
+      <v-btn icon elevation="6" v-bind="attrs" aria-label="Help" v-on="on">
         <v-icon v-text="'mdi-help'" />
       </v-btn>
     </template>
@@ -10,7 +10,9 @@
       <v-data-table :headers="headers" :items="controls" hide-default-footer />
       <v-card-actions>
         <v-spacer />
-        <v-btn text color="primary" @click="dialog = false">Close</v-btn>
+        <v-btn text color="primary" aria-label="Close" @click="dialog = false">
+          Close
+        </v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>

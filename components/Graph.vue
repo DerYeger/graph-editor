@@ -5,13 +5,13 @@
       <repo-link />
       <theme-toggle />
       <help />
-      <v-btn icon elevation="6" @click="deleteGraph()">
+      <v-btn icon elevation="6" aria-label="Reset Graph" @click="resetGraph()">
         <v-icon v-text="'mdi-delete'" />
       </v-btn>
-      <v-btn icon elevation="6" @click="resetGraph()">
+      <v-btn icon elevation="6" aria-label="Reset View" @click="resetView()">
         <v-icon v-text="'mdi-image-filter-center-focus'" />
       </v-btn>
-      <v-btn icon elevation="6" @click="createNode()">
+      <v-btn icon elevation="6" aria-label="Create Node" @click="createNode()">
         <v-icon v-text="'mdi-plus'" />
       </v-btn>
     </div>
@@ -315,7 +315,7 @@ export default Vue.extend({
       this.draggableLinkTargetNode = undefined
       this.draggableLinkEnd = undefined
     },
-    resetGraph(): void {
+    resetView(): void {
       this.simulation!.stop()
       this.graphHost.selectChildren().remove()
       this.zoom = undefined
@@ -330,10 +330,10 @@ export default Vue.extend({
       this.resetDraggableLink()
       this.init()
     },
-    deleteGraph(): void {
+    resetGraph(): void {
       this.graph = new Graph()
       this.graphHasNodes = false
-      this.resetGraph()
+      this.resetView()
     },
   },
 })
