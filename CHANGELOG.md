@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/DerYeger/graph-editor/compare/v1.3.0...v1.4.0) (2021-03-26)
+
+
+### Bug Fixes
+
+* improve layout of help table ([79cd3b2](https://github.com/DerYeger/graph-editor/commit/79cd3b29b3de5810aea7f3b10a9e579ae3c4c237))
+
+
+### Features
+
+* update meta description ([6b633e4](https://github.com/DerYeger/graph-editor/commit/6b633e41f4756883c9e6e75e262cf7e70f7dfb98))
+
 # [1.3.0](https://github.com/DerYeger/graph-editor/compare/v1.2.1...v1.3.0) (2021-03-26)
 
 
