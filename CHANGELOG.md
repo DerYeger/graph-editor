@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/DerYeger/graph-editor/compare/v1.2.0...v1.2.1) (2021-03-26)
+
+
+### Bug Fixes
+
+* reset draggable link after node deletion ([4abf183](https://github.com/DerYeger/graph-editor/commit/4abf183ad76c08b89ce9621f78430e51cea82abb))
+
 # [1.2.0](https://github.com/DerYeger/graph-editor/compare/v1.1.0...v1.2.0) (2021-03-26)
 
 
