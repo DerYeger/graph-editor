@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/DerYeger/graph-editor/compare/v1.1.0...v1.2.0) (2021-03-26)
+
+
+### Features
+
+* improve performance of node creation ([deca797](https://github.com/DerYeger/graph-editor/commit/deca79787f68451fb3d277dcf3555c9391d5b632))
+
 # [1.1.0](https://github.com/DerYeger/graph-editor/compare/v1.0.1...v1.1.0) (2021-03-26)
 
 
