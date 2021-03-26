@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/DerYeger/graph-editor/compare/v1.2.1...v1.3.0) (2021-03-26)
+
+
+### Features
+
+* add controls help ([509bd60](https://github.com/DerYeger/graph-editor/commit/509bd6094f588bf3e330641c78a3d68a7cb73c4c))
+
 ## [1.2.1](https://github.com/DerYeger/graph-editor/compare/v1.2.0...v1.2.1) (2021-03-26)
 
 
