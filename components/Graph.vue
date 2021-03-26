@@ -144,14 +144,11 @@ export default Vue.extend({
       await this.graph!.createLink(source.id, target.id)
       this.restart()
     },
-    async createNode(x?: number, y?: number): Promise<void> {
-      await this.graph.createNodeWithGeneratedId(
-        x ?? this.width / 2,
-        y ?? this.height / 2
-      )
+    createNode(x?: number, y?: number): void {
+      this.graph.createNode(x ?? this.width / 2, y ?? this.height / 2)
       this.restart()
     },
-    onTick() {
+    onTick(): void {
       this.node!.attr('transform', (d) => `translate(${d.x},${d.y})`)
 
       this.link!.selectAll<SVGPathElement, Link>('path').attr(

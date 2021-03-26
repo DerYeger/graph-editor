@@ -2,6 +2,7 @@ import { D3Link, Link } from '~/model/link'
 import { D3Node, Node } from '~/model/node'
 
 export default class Graph {
+  private idCounter = 0
   public readonly nodes: D3Node[] = []
   public readonly links: D3Link[] = []
 
@@ -12,25 +13,13 @@ export default class Graph {
     })
   }
 
-  public createNodeWithGeneratedId(x?: number, y?: number): Promise<D3Node> {
-    const highestCurrentId = this.nodes
-      .map((node) => +node.id)
-      .filter((id) => !isNaN(id))
-      .reduce((prev, curr) => (prev >= curr ? prev : curr), -1)
-    return this.createNode(`${highestCurrentId + 1}`, x, y)
-  }
-
-  public createNode(id: string, x?: number, y?: number): Promise<D3Node> {
-    if (this.nodes.some((n) => n.id === id)) {
-      return Promise.reject(id)
-    }
-
-    const node = new Node(id, x, y)
+  public createNode(x?: number, y?: number): D3Node {
+    const node = new Node(this.idCounter++, x, y)
     this.nodes.push(node)
-    return Promise.resolve(node)
+    return node
   }
 
-  public createLink(sourceId: string, targetId: string): Promise<D3Link> {
+  public createLink(sourceId: number, targetId: number): Promise<D3Link> {
     const existingLink = this.links.find(
       (l) => l.source.id === sourceId && l.target.id === targetId
     )

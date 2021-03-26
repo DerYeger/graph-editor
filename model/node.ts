@@ -1,7 +1,7 @@
 import { SimulationNodeDatum } from 'd3'
 
 export interface D3Node extends SimulationNodeDatum {
-  id: string
+  id: number
   x?: number
   y?: number
   fx?: number
@@ -11,7 +11,7 @@ export interface D3Node extends SimulationNodeDatum {
 export class Node implements D3Node {
   // eslint-disable-next-line no-useless-constructor
   public constructor(
-    public readonly id: string,
+    public readonly id: number,
     public x?: number,
     public y?: number,
     public fx?: number,
