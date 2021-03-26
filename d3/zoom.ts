@@ -7,6 +7,6 @@ export function createZoom(
   return d3
     .zoom<SVGSVGElement, undefined>()
     .scaleExtent([0.1, 10])
-    .filter((event) => true || event.button === 0 || event.touches?.length >= 2)
+    .filter((event) => event.button === 0 || event.touches?.length >= 2)
     .on('zoom', (event) => onZoom(event))
 }
