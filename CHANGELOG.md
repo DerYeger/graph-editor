@@ -1,3 +1,13 @@
+# [1.6.0](https://github.com/DerYeger/graph-editor/compare/v1.5.0...v1.6.0) (2021-03-26)
+
+
+### Features
+
+* add aria labels to buttons ([3fde156](https://github.com/DerYeger/graph-editor/commit/3fde156494fd88aefbb8a31890be4501d22d1bf2))
+* add elevation to buttons ([01c8e9a](https://github.com/DerYeger/graph-editor/commit/01c8e9ab26fb718e8c39673a85078149eb9d6561))
+* add top margin to buttons ([41ddfc1](https://github.com/DerYeger/graph-editor/commit/41ddfc176ba4ce89bfa042e476d5811b18f4657d))
+* use same color for marker of draggable link ([3a207ec](https://github.com/DerYeger/graph-editor/commit/3a207ecbf5d3943d059c228b3bfd834bdbc3756e))
+
 # [1.5.0](https://github.com/DerYeger/graph-editor/compare/v1.4.0...v1.5.0) (2021-03-26)
 
 
