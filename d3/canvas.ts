@@ -17,5 +17,6 @@ export function createCanvas(
     .on('contextmenu', (event: MouseEvent) => terminate(event))
     .on('dblclick', (event) => onDoubleClick(event))
     .call(zoom)
+    .on('dblclick.zoom', null)
     .append('g')
 }
