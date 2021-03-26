@@ -25,13 +25,13 @@
 import * as d3 from 'd3'
 import { D3ZoomEvent } from 'd3'
 import Vue from 'vue'
-import { createCanvas } from '~/d3/canvas'
-import { createDrag } from '~/d3/drag'
-import { createDraggableLink } from '~/d3/draggable-link'
+import { Canvas, createCanvas } from '~/d3/canvas'
+import { createDrag, Drag } from '~/d3/drag'
+import { createDraggableLink, DraggableLink } from '~/d3/draggable-link'
 import { terminate } from '~/d3/event'
-import { createLink } from '~/d3/link'
+import { createLink, LinkSelection } from '~/d3/link'
 import { initMarkers } from '~/d3/markers'
-import { createNode } from '~/d3/node'
+import { createNode, NodeSelection } from '~/d3/node'
 import {
   linePath,
   paddedArcPath,
@@ -39,7 +39,7 @@ import {
   paddedReflexivePath,
 } from '~/d3/paths'
 import { createSimulation } from '~/d3/simulation'
-import { createZoom } from '~/d3/zoom'
+import { createZoom, Zoom } from '~/d3/zoom'
 import { defaultGraphConfig, GraphConfiguration } from '~/model/config'
 import Graph from '~/model/graph'
 import { Link } from '~/model/link'
@@ -51,17 +51,12 @@ interface Data {
   width: number
   height: number
   simulation: any
-  zoom?: d3.ZoomBehavior<SVGSVGElement, undefined>
-  drag?: d3.DragBehavior<SVGGElement, Node, Node>
-  canvas?: d3.Selection<SVGGElement, undefined, HTMLElement, undefined>
-  link?: d3.Selection<SVGGElement, Link, SVGGElement, undefined>
-  node?: d3.Selection<SVGGElement, Node, SVGGElement, undefined>
-  draggableLink?: d3.Selection<
-    SVGPathElement,
-    undefined,
-    HTMLElement,
-    undefined
-  >
+  zoom?: Zoom
+  drag?: Drag
+  canvas?: Canvas
+  link?: LinkSelection
+  node?: NodeSelection
+  draggableLink?: DraggableLink
   draggableLinkSourceNode?: Node
   draggableLinkTargetNode?: Node
   draggableLinkEnd?: [number, number]

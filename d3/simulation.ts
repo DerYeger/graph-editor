@@ -4,13 +4,15 @@ import Graph from '~/model/graph'
 import { Link } from '~/model/link'
 import { Node } from '~/model/node'
 
+export type Simulation = d3.Simulation<Node, Link>
+
 export function createSimulation(
   graph: Graph,
   config: GraphConfiguration,
   width: number,
   height: number,
   onTick: () => void
-) {
+): Simulation {
   return d3
     .forceSimulation<Node, Link>(graph!.nodes)
     .on('tick', () => onTick())

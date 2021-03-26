@@ -1,8 +1,14 @@
 import * as d3 from 'd3'
+import { Canvas } from '~/d3/canvas'
 import { Node } from '~/model/node'
 
-export function createNode(
-  canvas: d3.Selection<SVGGElement, undefined, HTMLElement, undefined>
-): d3.Selection<SVGGElement, Node, SVGGElement, undefined> {
+export type NodeSelection = d3.Selection<
+  SVGGElement,
+  Node,
+  SVGGElement,
+  undefined
+>
+
+export function createNode(canvas: Canvas): NodeSelection {
   return canvas.append('g').classed('nodes', true).selectAll('circle')
 }

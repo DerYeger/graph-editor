@@ -1,12 +1,12 @@
 import * as d3 from 'd3'
 import { D3DragEvent } from 'd3'
 import { terminate } from '~/d3/event'
-import { Link } from '~/model/link'
+import { Simulation } from '~/d3/simulation'
 import { Node } from '~/model/node'
 
-export function createDrag(
-  simulation: d3.Simulation<Node, Link>
-): d3.DragBehavior<SVGGElement, Node, Node> {
+export type Drag = d3.DragBehavior<SVGGElement, Node, Node>
+
+export function createDrag(simulation: Simulation): Drag {
   return d3
     .drag<SVGGElement, Node, Node>()
     .filter((event) => event.button === 1)

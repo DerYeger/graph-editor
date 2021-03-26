@@ -1,13 +1,28 @@
 import * as d3 from 'd3'
 import { terminate } from '~/d3/event'
+import { Zoom } from '~/d3/zoom'
+
+export type GraphHost = d3.Selection<
+  HTMLDivElement,
+  undefined,
+  HTMLElement,
+  undefined
+>
+
+export type Canvas = d3.Selection<
+  SVGGElement,
+  undefined,
+  HTMLElement,
+  undefined
+>
 
 export function createCanvas(
-  host: d3.Selection<HTMLDivElement, undefined, HTMLElement, undefined>,
-  zoom: d3.ZoomBehavior<SVGSVGElement, undefined>,
+  host: GraphHost,
+  zoom: Zoom,
   onPointerMoved: (event: PointerEvent) => void,
   onPointerUp: (event: PointerEvent) => void,
   onDoubleClick: (event: PointerEvent) => void
-): d3.Selection<SVGGElement, undefined, HTMLElement, undefined> {
+): Canvas {
   return host
     .append('svg')
     .attr('width', '100%')
@@ -15,7 +30,7 @@ export function createCanvas(
     .on('pointermove', (event: PointerEvent) => onPointerMoved(event))
     .on('pointerup', (event: PointerEvent) => onPointerUp(event))
     .on('contextmenu', (event: MouseEvent) => terminate(event))
-    .on('dblclick', (event) => onDoubleClick(event))
+    .on('dblclick', (event: PointerEvent) => onDoubleClick(event))
     .call(zoom)
     .on('dblclick.zoom', null)
     .append('g')
