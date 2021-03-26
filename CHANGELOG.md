@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/DerYeger/graph-editor/compare/v1.4.0...v1.5.0) (2021-03-26)
+
+
+### Features
+
+* show info text if graph is empty ([9e3bfe5](https://github.com/DerYeger/graph-editor/commit/9e3bfe51e5109754c6d5f94c6a7810ba32a48e55))
+
 # [1.4.0](https://github.com/DerYeger/graph-editor/compare/v1.3.0...v1.4.0) (2021-03-26)
 
 
