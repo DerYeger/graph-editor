@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/DerYeger/graph-editor/compare/v1.6.0...v1.7.0) (2021-03-26)
+
+
+### Features
+
+* update error page layout ([cf1c13b](https://github.com/DerYeger/graph-editor/commit/cf1c13bd041cfa9fd55550adec6af7f99162fae5))
+
 # [1.6.0](https://github.com/DerYeger/graph-editor/compare/v1.5.0...v1.6.0) (2021-03-26)
 
 
