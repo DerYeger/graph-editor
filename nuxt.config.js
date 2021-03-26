@@ -20,7 +20,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Simple graph editor built with D3.js.',
+        content: 'Simple editor for directed graphs, built with D3.js.',
       },
     ],
     link: [
