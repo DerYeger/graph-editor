@@ -389,6 +389,11 @@ export default Vue.extend({
   position: absolute;
   top: 1rem;
   left: 1rem;
+  margin-top: -6px;
+
+  > * {
+    margin-top: 6px;
+  }
 }
 
 *:not(input):not(.selectable) {
