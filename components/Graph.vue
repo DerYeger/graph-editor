@@ -5,13 +5,13 @@
       <repo-link />
       <theme-toggle />
       <help />
-      <v-btn icon @click="deleteGraph()">
+      <v-btn icon elevation="6" @click="deleteGraph()">
         <v-icon v-text="'mdi-delete'" />
       </v-btn>
-      <v-btn icon @click="resetGraph()">
+      <v-btn icon elevation="6" @click="resetGraph()">
         <v-icon v-text="'mdi-image-filter-center-focus'" />
       </v-btn>
-      <v-btn icon @click="createNode()">
+      <v-btn icon elevation="6" @click="createNode()">
         <v-icon v-text="'mdi-plus'" />
       </v-btn>
     </div>

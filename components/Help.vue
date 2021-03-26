@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog">
     <template #activator="{ on, attrs }">
-      <v-btn v-bind="attrs" icon v-on="on">
+      <v-btn icon elevation="6" v-bind="attrs" v-on="on">
         <v-icon v-text="'mdi-help'" />
       </v-btn>
     </template>
