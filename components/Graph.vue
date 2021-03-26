@@ -233,6 +233,7 @@ export default Vue.extend({
             .on('contextmenu', (event: MouseEvent, d: Node) => {
               terminate(event)
               this.graph.removeNode(d)
+              this.resetDraggableLink()
               this.restart()
             })
           nodeGroup
