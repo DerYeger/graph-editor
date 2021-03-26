@@ -2,6 +2,7 @@
   <div width="100%" height="100%">
     <div class="graph-host" width="100%" height="100%"></div>
     <div class="button-container">
+      <repo-link />
       <v-btn icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">
         <v-icon
           v-text="$vuetify.theme.dark ? 'mdi-brightness-5' : 'mdi-brightness-2'"
