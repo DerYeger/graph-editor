@@ -19,33 +19,33 @@ export default class Graph {
     return node
   }
 
-  public createLink(sourceId: number, targetId: number): Promise<D3Link> {
+  public createLink(sourceId: number, targetId: number): D3Link | undefined {
     const existingLink = this.links.find(
       (l) => l.source.id === sourceId && l.target.id === targetId
     )
     if (existingLink !== undefined) {
-      return Promise.reject(existingLink)
+      return undefined
     }
 
     const source = this.nodes.find((node) => node.id === sourceId)
     if (source === undefined) {
-      return Promise.reject(sourceId)
+      return undefined
     }
 
     const target = this.nodes.find((node) => node.id === targetId)
     if (target === undefined) {
-      return Promise.reject(targetId)
+      return undefined
     }
 
     const link = new Link(source, target)
     this.links.push(link)
-    return Promise.resolve(link)
+    return link
   }
 
-  public removeNode(node: D3Node): Promise<[D3Node, D3Link[]]> {
+  public removeNode(node: D3Node): [D3Node, D3Link[]] | undefined {
     const nodeIndex = this.nodes.findIndex((n) => n.id === node.id)
     if (nodeIndex === -1) {
-      return Promise.reject(node)
+      return undefined
     }
 
     this.nodes.splice(nodeIndex, 1)
@@ -57,18 +57,18 @@ export default class Graph {
       this.links.splice(linkIndex, 1)
     })
 
-    return Promise.resolve([node, attachedLinks])
+    return [node, attachedLinks]
   }
 
-  public removeLink(link: D3Link): Promise<D3Link> {
+  public removeLink(link: D3Link): D3Link | undefined {
     const linkIndex = this.links.findIndex(
       (l) => l.source.id === link.source.id && l.target.id === link.target.id
     )
     if (linkIndex === -1) {
-      return Promise.reject(link)
+      return undefined
     }
 
     this.links.splice(linkIndex, 1)
-    return Promise.resolve(link)
+    return link
   }
 }

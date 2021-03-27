@@ -96,7 +96,7 @@ export default Vue.extend({
     this.init()
   },
   methods: {
-    init() {
+    init(): void {
       this.width = this.graphHost.node()!.clientWidth
       this.height = this.graphHost.node()!.clientHeight
       this.zoom = createZoom((event: D3ZoomEvent<any, any>) =>
@@ -137,8 +137,8 @@ export default Vue.extend({
         `translate(${this.xOffset},${this.yOffset})scale(${this.scale})`
       )
     },
-    async createLink(source: Node, target: Node): Promise<void> {
-      await this.graph!.createLink(source.id, target.id)
+    createLink(source: Node, target: Node): void {
+      this.graph!.createLink(source.id, target.id)
       this.restart()
     },
     createNode(x?: number, y?: number): void {
@@ -257,7 +257,7 @@ export default Vue.extend({
       this.simulation!.nodes(this.graph!.nodes)
       this.simulation!.alpha(alpha).restart()
     },
-    onPointerDown(event: PointerEvent, node: Node) {
+    onPointerDown(event: PointerEvent, node: Node): void {
       if (event.button !== 0) {
         return
       }
