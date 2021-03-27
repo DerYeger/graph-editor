@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/DerYeger/graph-editor/compare/v1.7.0...v1.7.1) (2021-03-27)
+
+
+### Bug Fixes
+
+* remove unused promises ([0bd8222](https://github.com/DerYeger/graph-editor/commit/0bd8222667f2b48ef9ea52d7ad9107f7ed215d26))
+
 # [1.7.0](https://github.com/DerYeger/graph-editor/compare/v1.6.0...v1.7.0) (2021-03-26)
 
 
